@@ -1,0 +1,50 @@
+body {
+background-color: lightblue;
+    }
+
+/* This is the top section.*/
+#numToGuess {
+font-family: sans-serif;
+background-color: black;
+color: red;
+}
+
+#title {
+    font-family: sans-serif;
+    background-color: black;
+    color: red;
+    }
+
+.top_container {
+height: auto;
+width: auto;
+background-color: sandybrown;}
+
+p {
+    color: green;
+    font-display: bold;
+    font-size: 20px;
+}
+    
+/* This is the middle section.*/
+li {
+    display: inline;
+    list-style-type: none;
+    padding: 20px;
+   }
+
+   .jumbotron {
+
+    }
+
+/* This is the bottom section.*/
+.wrapper {
+height: 200px;
+width: 1000px;
+}
+
+
+
+
+
+
