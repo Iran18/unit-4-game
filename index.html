@@ -26,7 +26,7 @@
             <center><div class="inside_container">
                     <h1>-->Select 4<--</h1> 
                   </div></center>
-                  <center><p>In this game you will click one of the four beautiful images. Once you get to 50, you win!</p>
+                  <center><p>In this game you will click one of the four beautiful images. Once you reach the winning number, you win!</p>
                     <p>If I can figure out how to code the numbers properly, this game might not suck as much. </p></center>
             </div>
     
@@ -71,6 +71,8 @@ var tacoRandomNum = Math.floor((Math.random() * 10) + 1);
 var cookiesRandomNum = Math.floor((Math.random() * 10) + 1);
 var beerRandomNum = Math.floor((Math.random() * 10) + 1);
 var tequilaRandomNum = Math.floor((Math.random() * 10) + 1);
+var winPoints = 0
+var losePoints = 0
 
 //The audio clips for each image.
 var steak = new Audio("assets/audio/didyousaysteak.mp3");
@@ -108,14 +110,15 @@ $(scoreValue).text(counter);
 //This is the statement for winning.
 if (counter === winningNumber) {
   alert("You beat my ugly ass game. Well done.");
-   $(winValue).text(1);
+  winPoints++
+   $("#winValue").text(winPoints);
     reset();
 }
-
 //This is the statement for losing.
-else if (counter >= winningNumber) {
+else if (counter > winningNumber) {
  alert("You have failed at my terrible game.");
-  $(lossValue).text(1);
+  losePoints++
+   $("#lossValue").text(losePoints);
     reset();
  }});
 //------------------------------------------------------
@@ -127,13 +130,15 @@ $(".cookies").on("click", function() {
    $(scoreValue).text(counter);
     if (counter === winningNumber) {
      alert("You beat my ugly ass game. Well done.");
-      $(winValue).text(1);
-       reset();
+      winPoints++
+       $("#winValue").text(winPoints);
+        reset();
 }
-else if (counter >= winningNumber) {
+else if (counter > winningNumber) {
   alert("You have failed at my terrible game.");
-   $(lossValue).text(1);
-    reset();
+   losePoints++
+    $("#lossValue").text(losePoints);
+     reset();
  }});
 //-----------------------------------------------------
 
@@ -144,12 +149,14 @@ $(".beer").on("click", function() {
     $(scoreValue).text(counter);
      if (counter === winningNumber) {
       alert("You beat my ugly ass game. Well done.");
-       $(winValue).text(1);
-        reset();
+       winPoints++
+        $("#winValue").text(winPoints);
+         reset();
 }
-else if (counter >= winningNumber) {
+else if (counter > winningNumber) {
   alert("You have failed at my terrible game.");
-   $(lossValue).text(1);
+  losePoints++
+   $("#lossValue").text(losePoints);
     reset();
     }});
 //---------------------------------------------------------
@@ -160,14 +167,16 @@ $(".tequila").on("click", function() {
    counter += tequilaRandomNum;
     $(scoreValue).text(counter);
      if (counter === winningNumber) {
-      alert("You beat my game.");
-      $(winValue).text(1);
-        reset();
+      alert("You beat my ugly ass game. Well done.");
+       winPoints++
+        $("#winValue").text(winPoints);
+         reset();
 }
-else if (counter >= winningNumber) {
+else if (counter > winningNumber) {
   alert("You have failed at my terrible game.");
-   $(lossValue).text(1);
-    reset();
+   losePoints++
+    $("#lossValue").text(losePoints);
+     reset();
 }});
 //---------------------------------------------------------
 
